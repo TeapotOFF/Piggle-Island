@@ -30,10 +30,13 @@ public class SettingMenuScript : MonoBehaviour
 
     public void ChangeVolume(float volume)
     {
-        _volumeValue = Mathf.Log10(volume) * 20f;
-        Mixer.audioMixer.SetFloat("MasterVolume", _volumeValue);
+        if (GetComponentInChildren<Toggle>().isOn)
+        {
+            _volumeValue = Mathf.Log10(volume) * 20f;
+            Mixer.audioMixer.SetFloat("MasterVolume", _volumeValue);
 
-        PlayerPrefs.SetFloat("MasterVolume", _volumeValue);
+            PlayerPrefs.SetFloat("MasterVolume", _volumeValue);
+        }
     }
 
     public void AccessButton()

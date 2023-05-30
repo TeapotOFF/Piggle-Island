@@ -186,7 +186,6 @@ public class Player : MonoBehaviour
 
     private void PlayerDeath()
     {
-        Debug.Log("dswd");
         Respawn();
     }
 

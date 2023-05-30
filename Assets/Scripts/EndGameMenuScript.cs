@@ -12,6 +12,7 @@ public class EndGameMenuScript : MonoBehaviour
 
     public void StartNewGameButton()
     {
+        GamesData.RefreshGameData();
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
